@@ -17,11 +17,18 @@ let package = Package(
             name: "PacketForwardHandler",
             targets: ["PacketForwardHandler"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-nio", exact: "2.63.0")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ProxyServer"),
+            name: "ProxyServer",
+            dependencies: [
+                .product(name: "NIO", package: "swift-nio"),
+                .product(name: "NIOHTTP1", package: "swift-nio"),
+            ]),
         .target(
             name: "PacketForwardHandler"),
         .testTarget(

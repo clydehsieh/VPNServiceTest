@@ -8,11 +8,14 @@
 import Foundation
 
 public class ProxyServer {
-    public init() {
-        
+    
+    private var defaultURL: URL?
+    
+    public init(defaultURL: URL? = nil) {
+        self.defaultURL = defaultURL
     }
     
-    public func showProxyServer() {
-        debugPrint("ProxyServer")
+    public func getURL() -> URL?  {
+        defaultURL
     }
 }
