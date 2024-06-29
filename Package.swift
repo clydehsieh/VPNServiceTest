@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "About",
+    name: "VPNService",
     platforms: [
         .iOS(.v16)
     ],
